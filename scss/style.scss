@@ -1,0 +1,336 @@
+@import "normalize";
+@import "layout";
+@import "elements";
+@import "slick.scss";
+@import "fonts.scss";
+
+body{
+	position: relative;
+}
+
+// header
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+	z-index: 5;
+	padding-top: 60px;
+}
+
+.socials,
+.nav {
+
+	&__list {
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	&__item {
+		display: inline-block;
+	}
+}
+
+.socials {
+
+	&__list {
+		margin: 0;
+	}
+
+	&__item + &__item {
+		margin-left: 18px;
+	}
+
+	&__link {
+		color: #fff;
+		display: block;
+		border-radius: 50%;
+		height: 40px;
+		width: 40px;
+		line-height: 40px;
+		border: 1px solid currentColor;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			color: #55b7ff;
+		}
+	}
+}
+
+.nav {
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__link {
+		color: #fff;
+		text-transform: uppercase;
+		text-decoration: none;
+		position: relative;
+		padding-left: 20px;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			border: 1px solid currentColor;
+			height: 9px;
+			width: 9px;
+			border-radius: 50%;
+			transition: background-color .3s ease-in-out;
+		}
+
+		&:hover,
+		&:focus,
+		&--active {
+
+			&::before {
+				background-color: currentColor;
+			}
+		}
+	}
+}
+
+// end of header
+
+// hero
+.hero-slider {
+
+	.slick-dots {
+		position: absolute;
+		right: 40px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 0;
+		list-style-type: none;
+		color: #fff;
+
+		li + li {
+			margin-top: 40px;
+		}
+
+		button {
+			border: none;
+			background-color: transparent;
+			outline: none;
+
+			&::before {
+				content: '';
+				border: 1px solid currentColor;
+				height: 9px;
+				width: 9px;
+				border-radius: 50%;
+				display: block;
+				transition: background-color .3s ease-in-out;
+			}
+
+			&:hover,
+			&:focus {
+
+				&::before {
+					background-color: currentColor;
+				}
+			}
+		}
+
+		.slick-active {
+
+			button {
+
+				&::before {
+					background-color: currentColor;
+				}
+			}
+		}
+	}
+}
+
+.hero-slide {
+	color: #fff;
+	min-height: 800px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display: flex !important;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#55b7ff+0,7e5aff+100 */ background: #55b7ff; /* Old browsers */ background: -moz-linear-gradient(45deg,  #55b7ff 0%, #7e5aff 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(45deg,  #55b7ff 0%,#7e5aff 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(45deg,  #55b7ff 0%,#7e5aff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55b7ff', endColorstr='#7e5aff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	&::after {
+		content: '';
+		display: block;
+		background-image: url(../img/bg-slider.png);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+	}
+
+	&__sub-title,
+	&__title {
+		text-transform: uppercase;
+	}
+
+	&__title {
+		font-size: 80px;
+		line-height: 1;
+	}
+}
+
+.scroll-down {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 40px;
+	width: 40px;
+	border: 1px solid currentColor;
+	color: #fff;
+	border-radius: 50%;
+	line-height: 40px;
+
+	&:hover,
+	&:focus {
+		color: #55b7ff;
+	}
+}
+// end of hero
+
+/* Layout */
+.ba-container{
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1200px;
+}
+
+#ba-map{
+	height: 700px;
+	
+}
+
+.ba-fon{
+	padding-bottom: 250px;
+}
+
+.ba-fon img{
+	box-shadow: -200px -70px 0px 0px rgba(15, 89, 207, 0.75);
+}
+
+.ba-button{
+	display: inline-block;
+	background:#fff;
+	color: #020202;
+	border: none;
+	font-size: 22px;
+	font-weight: 700;
+	height: 71px;
+	line-height: 69px;
+	padding: 0 76px;
+	letter-spacing:0.03em;
+	border: 2px solid #020202;
+	text-transform: uppercase;
+
+}
+
+.ba-what h2 {
+	text-align: center;
+	font-size: 44px;
+	font-weight: 700;
+	position: relative;
+}
+
+.ba-what ::before {
+	content: '';
+	width: 90px;
+	height: 1px;
+	background-color: #020202;
+	position: absolute;
+	top: -43%;
+	left: 35%;
+
+}
+
+
+.ba-one-world {
+	padding-left: 40px;
+}
+
+
+.ba-button {
+	display: inline-block;
+	background: #fff;
+	color: #020202;
+	border: none;
+	font-size: 14px;
+	font-weight: 700;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 30px;
+
+
+
+	letter-spacing: 0.03em;
+	border: 2px solid #020202;
+	text-transform: uppercase;
+
+}
+
+.ba-button:hover {
+	color: #c60ebe;
+	background-color: transparent;
+	border-color: currentColor;
+}
+
+.ba-fone img{
+	box-shadow: 126px -70px 0px 0px rgba(96, 26, 134, 0.75);
+
+}
+
+.ba-gallery-photo{
+    height: 440px;
+	width: 580px;
+    img{
+        height: 48%;
+        width: 48%;
+    }
+}
+.ba-gallery-about{
+ text-transform: uppercase;
+ font-size: 44px;
+ font-weight: 500;
+ font-family: Gotham;
+ color: #2c4058;
+ text-align: center;
+ margin-top: 180px;
+ margin-bottom: 100px;
+ &::before{
+     content: '';
+     height: 1px;
+     width: 100px;
+     background: black;
+     position: absolute;
+     left: 45%;
+     top: 87%;
+ }
+}
+
+.ba-see{
+	margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 140px;
+}
